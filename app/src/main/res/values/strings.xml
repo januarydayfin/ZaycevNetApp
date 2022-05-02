@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZaycevNetApp</string>
+    <string name="tap_here_to_reset_counter">Tap Image to Reset Counter</string>
+</resources>

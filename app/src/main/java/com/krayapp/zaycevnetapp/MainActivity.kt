@@ -21,14 +21,7 @@ class MainActivity : AppCompatActivity() {
             counterToast = sharedPref.getInt(TOAST_COUNTER_KEY, 0)
         }
         val image = findViewById<ImageView>(R.id.image)
-        image.setOnClickListener {
-            counterToast = 0
-            sharedPref
-                .edit()
-                .putInt(TOAST_COUNTER_KEY, counterToast)
-                .apply()
-            Toast.makeText(this, "Таймер обнулен", Toast.LENGTH_SHORT).show()
-        }
+        imageClickListener(image)
     }
 
     override fun onResume() {
@@ -50,5 +43,15 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+    }
+    private fun imageClickListener(image:ImageView){
+        image.setOnClickListener {
+            counterToast = 0
+            sharedPref
+                .edit()
+                .putInt(TOAST_COUNTER_KEY, counterToast)
+                .apply()
+            Toast.makeText(this, "Кликер обнулен", Toast.LENGTH_SHORT).show()
+        }
     }
 }
